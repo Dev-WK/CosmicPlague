@@ -1,0 +1,21 @@
+# Build
+build/
+build-*/
+out/
+cmake-build-*/
+CMakeUserPresets.json
+
+# IDE / edytory
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# System
+.DS_Store
+Thumbs.db
+
+# Doxygen
+docs/html/
+docs/latex/

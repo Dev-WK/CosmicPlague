@@ -1,0 +1,16 @@
+# Git sam normalizuje końce linii (Windows CRLF <-> Linux/macOS LF),
+# żeby w diffach nie pojawiały się fałszywe zmiany w całych plikach.
+* text=auto
+
+*.cpp text
+*.h   text
+*.vert text
+*.frag text
+*.obj text
+*.md  text
+
+# Pliki binarne - bez normalizacji i bez diffów tekstowych
+*.png binary
+*.jpg binary
+*.wav binary
+*.ogg binary
