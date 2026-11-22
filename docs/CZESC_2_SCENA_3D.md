@@ -17,12 +17,6 @@ Podstawy renderowania 3D: wczytanie shaderów, kamera z perspektywą, model w pa
 | `assets/shaders/flat.vert/.frag` | shader jednokolorowych linii |
 
 ## Zależności
-
-Ta część nie zależy od żadnej innej - można ją skompilować samą na szablonie.
-Nic jeszcze nie rysuje na ekranie, dopóki część 3 (`World`) i część 1 (`Game`) jej nie użyją.
-
-## Jak to działa
-
 1. **Shader**: kod GLSL jest czytany z pliku, kompilowany osobno dla wierzchołków i fragmentów,
    potem łączony w program. Błędy kompilacji wyjątkiem z logiem OpenGL.
 2. **Kamera**: stoi w (0; 3,5; 8), patrzy w (0; 0; -15), kąt widzenia 55 stopni, płaszczyzny odcięcia 0,1 i 150.
@@ -32,10 +26,3 @@ Nic jeszcze nie rysuje na ekranie, dopóki część 3 (`World`) i część 1 (`G
 4. **Mesh**: VAO zapamiętuje układ danych (atrybut 0 = pozycja, atrybut 1 = normalna), VBO trzyma bajty.
 5. **Siatka**: linie podłużne co 2,5 jednostki (x od -7,5 do 7,5) i poprzeczne co 2,5 (z od 10 do -60).
    Rysowana jest w rzeczywistych współrzędnych 3D, więc perspektywa sama zbliża linie do siebie na horyzoncie.
-
-## Pytania do samodzielnego przećwiczenia
-
-* Co robi macierz widoku, a co macierz projekcji?
-* Dlaczego siatka zaczyna się dla z = 10, czyli za kamerą?
-* Czym różni się VAO od VBO?
-* Dlaczego linie na horyzoncie zlewają się w jedną plamę?
