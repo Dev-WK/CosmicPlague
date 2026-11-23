@@ -37,7 +37,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(glfw glm)
 
 # GLAD (OpenGL 3.3 Core) i stb są wrzucone do repozytorium w katalogu external/.
-add_library(glad STATIC external/glad/src/glad.c)
+add_library(glad STATIC external/glad/src/glad.c "src/entities/Entity.cpp" "src/entities/Entity.h" "src/entities/Player.cpp" "src/entities/Player.h" "src/render (2)/MeshFactory.cpp" "src/render (2)/MeshFactory.h" "src/world/InputState.h" "src/world/World.cpp" "src/world/World.h" "src/render/MeshFactory.cpp" "src/render/MeshFactory.h")
 target_include_directories(glad SYSTEM PUBLIC external/glad/include)
 target_link_libraries(glad PUBLIC ${CMAKE_DL_LIBS})
 
@@ -51,7 +51,7 @@ target_include_directories(stb SYSTEM INTERFACE external/stb)
 # więc dodanie pliku nie wymaga edycji tego CMakeLists.txt (mniej konfliktów w gitcie).
 file(GLOB_RECURSE CP_SOURCES CONFIGURE_DEPENDS ${CMAKE_SOURCE_DIR}/src/*.cpp)
 
-add_executable(CosmicPlague ${CP_SOURCES})
+add_executable(CosmicPlague ${CP_SOURCES} "src/entities/Entity.cpp" "src/entities/Entity.h" "src/entities/Player.cpp" "src/entities/Player.h" "src/render (2)/MeshFactory.cpp" "src/render (2)/MeshFactory.h" "src/world/InputState.h" "src/world/World.cpp" "src/world/World.h" "src/render/MeshFactory.cpp" "src/render/MeshFactory.h")
 
 target_include_directories(CosmicPlague PRIVATE src)
 target_link_libraries(CosmicPlague PRIVATE glfw glad glm::glm stb)
